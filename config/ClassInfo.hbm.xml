@@ -1,0 +1,21 @@
+<?xml version="1.0"  encoding="Windows-31J" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+    <class name="bean.ClassInfo" table="CLASS_INFO"  dynamic-update="true">
+        <id name="classInfoId" column="CLASS_INFO_ID"  type="int" >
+            <generator class="increment" />
+        </id>
+
+        <property name="className" type="java.lang.String" column="CLASS_NAME" />
+        <property name="grade" type="java.lang.String" column="GRADE" />
+		<property name="updateTime" type="java.util.Date" column="UPDATE_TIME" />
+        <property name="createTime" type="java.util.Date" column="CREATE_TIME" />
+        <property name="deleteFlg" type="java.lang.String" column="DELETE_FLG" />
+        <set name="history">
+        	<key column="CLASS_INFO_ID"/>
+        	<one-to-many class="bean.PromotionHistory"/>
+        </set>
+    </class>
+</hibernate-mapping>

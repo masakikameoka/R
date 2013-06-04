@@ -1,0 +1,21 @@
+<?xml version="1.0"  encoding="Windows-31J" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+    <class name="bean.PromotionHistory" table="PROMOTION_HISTORY" dynamic-update="true">
+      <composite-id>
+      	<key-many-to-one name="student" class="bean.Student">
+        <column name="STUDENT_ID" />
+        </key-many-to-one>
+        <key-property name="fiscalYear" column="FISCAL_YEAR"  type="java.lang.String" />
+    </composite-id>
+        <many-to-one name="classInfo"
+        column="CLASS_INFO_ID"
+        not-null="true"/>
+        <property name="updateTime" type="java.util.Date" column="UPDATE_TIME" />
+        <property name="createTime" type="java.util.Date" column="CREATE_TIME" />
+        <property name="deleteFlg" type="java.lang.String" column="DELETE_FLG" />
+
+    </class>
+</hibernate-mapping>

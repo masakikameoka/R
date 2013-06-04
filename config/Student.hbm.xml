@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+    <class name="bean.Student" table="STUDENT">
+        <id name="studentId" column="STUDENT_ID"  type="int" >
+            <generator class="increment" />
+        </id>
+
+        <property name="firstName" type="java.lang.String" column="FIRST_NAME" />
+       	<property name="lastName" type="java.lang.String" column="LAST_NAME" />
+       	<property name="firstNameKana" type="java.lang.String" column="FIRST_NAME_KANA" />
+       	<property name="lastNameKana" type="java.lang.String" column="LAST_NAME_KANA" />
+       	<property name="birthday" type="java.lang.String" column="BIRTHDAY" />
+	    <property name="sex" type="java.lang.String" column="SEX" />
+        <property name="remarks" type="java.lang.String" column="REMARKS" />
+        <property name="updateTime" type="java.util.Date" column="UPDATE_TIME" />
+        <property name="createTime" type="java.util.Date" column="CREATE_TIME" />
+        <property name="deleteFlg" type="java.lang.String" column="DELETE_FLG" />
+        <set name="history">
+        	<key column="STUDENT_ID"/>
+        	<one-to-many class="bean.PromotionHistory"/>
+        </set>
+    </class>
+</hibernate-mapping>

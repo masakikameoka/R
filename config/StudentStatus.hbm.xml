@@ -1,0 +1,22 @@
+<?xml version="1.0"  encoding="Windows-31J" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+    <class name="bean.StudentStatus" table="SEARCH_VIEW">
+        <id name="studentId" column="STUDENT_ID"  type="int" >
+            <generator class="increment" />
+        </id>
+        <property name="firstName" type="java.lang.String" column="FIRST_NAME" />
+       	<property name="lastName" type="java.lang.String" column="LAST_NAME" />
+		<property name="birthday" type="java.lang.String" column="BIRTHDAY" />
+		<property name="fiscalYear" type="java.lang.String" column="FISCAL_YEAR" />
+       	<property name="firstNameKana" type="java.lang.String" column="FIRST_NAME_KANA" />
+       	<property name="lastNameKana" type="java.lang.String" column="LAST_NAME_KANA" />
+ 	    <property name="sex" type="java.lang.String" column="SEX" />
+        <property name="className" type="java.lang.String" column="CLASS_NAME" />
+        <property name="grade" type="java.lang.String" column="GRADE" />
+        <property name="remarks" type="java.lang.String" column="REMARKS" />
+        <property name="deleteFlg" type="java.lang.String" column="DELETE_FLG" />
+    </class>
+</hibernate-mapping>
